@@ -9,7 +9,7 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index() throws InterruptedException {
-        new ChatServer(8080).run();
+        new ChatServer().run();
         return "Server has started";
     }
 }
