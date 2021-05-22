@@ -6,8 +6,10 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 
 public class ChatServer {
+    private final int port;
 
-    public ChatServer() {
+    public ChatServer(int port) {
+        this.port = port;
     }
 
     public void run() throws InterruptedException {
@@ -20,10 +22,11 @@ public class ChatServer {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ChatServerInitializer());
 
-            bootstrap.bind().sync().channel().closeFuture().sync();
+            bootstrap.bind(port).sync().channel().closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
     }
+
 }
