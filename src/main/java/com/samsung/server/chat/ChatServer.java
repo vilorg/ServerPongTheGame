@@ -12,7 +12,7 @@ public class ChatServer {
         this.port = port;
     }
 
-    public String run() throws InterruptedException {
+    public void run() throws InterruptedException {
         EventLoopGroup bossGroup = new NioEventLoopGroup();
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
@@ -27,7 +27,5 @@ public class ChatServer {
             bossGroup.shutdownGracefully();
             workerGroup.shutdownGracefully();
         }
-        return null;
     }
-
 }
