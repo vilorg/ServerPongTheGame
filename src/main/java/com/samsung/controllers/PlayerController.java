@@ -14,7 +14,7 @@ public class PlayerController {
     @Autowired
     private PlayerRepository player;
 
-    @RequestMapping(value = "/create", method = RequestMethod.PUT, consumes = "text/plain")
+    @RequestMapping(value = "/create", method = RequestMethod.POST, consumes = "text/plain")
     public int createPerson(@RequestBody String param){
         String name = null;
         String won_rounds = null;
