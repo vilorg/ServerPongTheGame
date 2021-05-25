@@ -1,4 +1,4 @@
-package com.samsung.server;
+package com.samsung;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
