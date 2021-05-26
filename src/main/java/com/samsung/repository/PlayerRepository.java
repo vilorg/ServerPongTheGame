@@ -33,9 +33,9 @@ public class PlayerRepository {
             ResultSet rs = stmt.executeQuery(sql);
             while(rs.next()){
                 json = new JSONObject();
-                json.put("name", rs.getString("PARTICIPANT"));
                 json.put("wonRounds", rs.getString("WON_ROUNDS"));
                 json.put("lostRounds", rs.getString("LOST_ROUNDS"));
+                json.put("name", rs.getString("PARTICIPANT"));
                 jsonArr.put(json);
             }
         } catch (SQLException | JSONException e) {
